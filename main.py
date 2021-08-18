@@ -23,15 +23,15 @@ class Main(QWidget):
         scroll_area_layout = QVBoxLayout(scroll_widget)
 
         for matrix in list_of_matrices:
-            graphplace_widget = QWidget(scroll_widget)
+            graphplace_widget = QWidget()
+            graphplace_layout = QHBoxLayout(graphplace_widget)
 
             canvas = scene.SceneCanvas(keys='interactive', bgcolor='w', size=(500, 500))
             view = canvas.central_widget.add_view()
             view.camera = scene.PanZoomCamera(aspect=1)
             scene.visuals.Image(matrix, parent=view.scene)
             view.camera.set_range()
-
-            graphplace_layout = QHBoxLayout(graphplace_widget)
+            
             graphplace_layout.addWidget(canvas.native)
             scroll_area_layout.addWidget(graphplace_widget)
 
