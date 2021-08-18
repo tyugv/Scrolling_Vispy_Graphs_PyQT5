@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QScrollArea, QSizePolicy, QVBoxLayout, QHBoxLayout, \
     QPushButton, QFrame
-from PyQt5.QtCore import Qt
 import sys
 import numpy as np
 from vispy import scene
